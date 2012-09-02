@@ -1,0 +1,5 @@
+This is an addon of Advanced Custom Fields plugin.
+
+When you enter a shortcode, it will be executed and outputted, by using the_field('FIELD_NAME_HERE') in your theme.
+
+You can see the list of shortcodes available on your site, by clicking the "View the list of shortcodes" button.
