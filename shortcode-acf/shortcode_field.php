@@ -30,15 +30,15 @@ class ShortCode_field extends acf_Field
 ?>
 		<script type="text/javascript">
 		jQuery(function() {
-			jQuery('#sc_acf_detail_<?php echo $field['label'];?>').click(function(){
-				jQuery('#sc_acf_<?php echo $field['label'];?>').css('display','block');
-				jQuery('#sc_acf_hide_<?php echo $field['label'];?>').css('display','inline');
-				jQuery('#sc_acf_detail_<?php echo $field['label'];?>').css('display','none');
+			jQuery('#sc_acf_detail_<?php echo esc_attr($field['label']);?>').click(function(){
+				jQuery('#sc_acf_<?php echo esc_attr($field['label']);?>').css('display','block');
+				jQuery('#sc_acf_hide_<?php echo esc_attr($field['label']);?>').css('display','inline');
+				jQuery('#sc_acf_detail_<?php echo esc_attr($field['label']);?>').css('display','none');
 			});
-			jQuery('#sc_acf_hide_<?php echo $field['label'];?>').click(function(){
-				jQuery('#sc_acf_<?php echo $field['label'];?>').css('display','none');
-				jQuery('#sc_acf_hide_<?php echo $field['label'];?>').css('display','none');
-				jQuery('#sc_acf_detail_<?php echo $field['label'];?>').css('display','inline');
+			jQuery('#sc_acf_hide_<?php echo esc_attr($field['label']);?>').click(function(){
+				jQuery('#sc_acf_<?php echo esc_attr($field['label']);?>').css('display','none');
+				jQuery('#sc_acf_hide_<?php echo esc_attr($field['label']);?>').css('display','none');
+				jQuery('#sc_acf_detail_<?php echo esc_attr($field['label']);?>').css('display','inline');
 			});
 		});
 		</script>	
