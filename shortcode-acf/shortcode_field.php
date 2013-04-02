@@ -1,16 +1,16 @@
 <?php
 
-class ShortCode_field extends acf_Field
+class shortcode_field extends acf_field
 {
 
 	function __construct($parent)
 	{
-		// do not delete!
-		parent::__construct($parent);
 
 		// set name / title
 		$this->name = 'ShortCode'; // variable name (no spaces / special characters / etc)
-		$this->title = __("ShortCode",'shortcode-acf'); // field label (Displayed in edit screens)
+		$this->label = __("ShortCode",'shortcode-acf'); // field label (Displayed in edit screens)
+		// do not delete!
+		parent::__construct($parent);
 
 	}
 
@@ -30,24 +30,24 @@ class ShortCode_field extends acf_Field
 ?>
 		<script type="text/javascript">
 		jQuery(function() {
-			jQuery('#sc_acf_detail_<?php echo esc_attr($field['label']);?>').click(function(){
-				jQuery('#sc_acf_<?php echo esc_attr($field['label']);?>').css('display','block');
-				jQuery('#sc_acf_hide_<?php echo esc_attr($field['label']);?>').css('display','inline');
-				jQuery('#sc_acf_detail_<?php echo esc_attr($field['label']);?>').css('display','none');
+			jQuery('#sc_acf_detail_<?php echo esc_js($field['label']);?>').click(function(){
+				jQuery('#sc_acf_<?php echo esc_js($field['label']);?>').css('display','block');
+				jQuery('#sc_acf_hide_<?php echo esc_js($field['label']);?>').css('display','inline');
+				jQuery('#sc_acf_detail_<?php echo esc_js($field['label']);?>').css('display','none');
 			});
-			jQuery('#sc_acf_hide_<?php echo esc_attr($field['label']);?>').click(function(){
-				jQuery('#sc_acf_<?php echo esc_attr($field['label']);?>').css('display','none');
-				jQuery('#sc_acf_hide_<?php echo esc_attr($field['label']);?>').css('display','none');
-				jQuery('#sc_acf_detail_<?php echo esc_attr($field['label']);?>').css('display','inline');
+			jQuery('#sc_acf_hide_<?php echo esc_js($field['label']);?>').click(function(){
+				jQuery('#sc_acf_<?php echo esc_js($field['label']);?>').css('display','none');
+				jQuery('#sc_acf_hide_<?php echo esc_js($field['label']);?>').css('display','none');
+				jQuery('#sc_acf_detail_<?php echo esc_js($field['label']);?>').css('display','inline');
 			});
 		});
 		</script>	
 <?php
 	}
 
-	function get_value_for_api($post_id, $field)
+	function format_value_for_api($value, $field)
 	{
-		$value = parent::get_value($post_id, $field);
         return do_shortcode($value);
 	}
 }
+new shortcode_field();
