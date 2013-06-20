@@ -2,8 +2,8 @@
 /*
 Plugin Name: shortcode for Advanced Custom Fields
 Plugin URI: 
-Description: When you enter a shortcode, it will be executed and outputted, by using the_field('FIELD_NAME_HERE') in your theme.
-Version: 2.0
+Description: When you enter a shortcode, it will be executed and outputted, by using the_field('FIELD_NAME_HERE') in your theme. You need Advanced Custom Fields ver.4.0 or later.
+Version: 3.0
 Author: Fumito MIZUNO
 Author URI: http://wp.php-web.net/
 License: GPL
